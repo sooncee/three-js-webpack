@@ -6,14 +6,16 @@ if (WEBGL.isWebGLAvailable()) {
 
   // scean
   const scene = new THREE.Scene()
-  alert('g')
-  // scene.background = new THREE.Color(0x004fff)
+  scene.background = new THREE.Color(0x004fff)
   // camera
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innderHeight, 0.1, 1000)
 
+  // canvas
+  const canvas = document.querySelector('#c')
+
   // renderer
-  const renderer = new THREE.WebGLRenderer()
-  renderer.setSize(window.innerWidth, window.innerHeight)
+  const renderer = new THREE.WebGLRenderer({ canvas })
+  // renderer.setSize(window.innerWidth, window.innerHeight)
 
   document.body.appendChild(renderer.domElement)
 
